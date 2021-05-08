@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+</head>
+<body>
+    {% extends 'web_projectA/base.html' %}
+
+    {% load static %}
+
+    {% block content %}
+
+        {% for service in services %}
+        
+        <section class="page-section clearfix">
+            <div class="container">
+              <div class="intro">
+                <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{service.image.url}}" alt="">
+                <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                  <h2 class="section-heading mb-4" >
+                    <span class="section-heading-lower">{{service.title}}</span>
+                    <span class="section-heading-upper">{{service.content}}</span>
+                  </h2>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        {% endfor %}
+
+    {% endblock %}
+</body>
+</html>
